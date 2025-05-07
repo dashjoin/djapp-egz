@@ -1,0 +1,11 @@
+{
+    "signInTabText": "EGZ Groß Gerau",
+    "emailLoginEnabled": true,
+    "passwordResetEnabled": true,
+    "registrationEnabled": true,
+    "guestLoginEnabled": false,
+    "providers": "google",
+    "defaultLocale": "de",
+    "backgroundImage": "https://www.gross-gerau.de/media/custom/3411_219_1_g.JPG?1598539210",
+    "openIdConfigs": []
+}

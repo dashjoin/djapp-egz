@@ -1,0 +1,135 @@
+{
+    "name": "postgres",
+    "djClassName": "org.dashjoin.service.SQLDatabase",
+    "username": "postgres",
+    "password": "DJ1#\brSFfAfQaNSnf7ISc+sWzj35cMOVwx6Rc",
+    "url": "jdbc:postgresql://localhost:5432/postgres",
+    "ID": "dj/postgres",
+    "tables": {
+        "Antrag": {
+            "tableLayout": {
+                "widget": "page",
+                "children": [
+                    {
+                        "title": "Meine Anträge",
+                        "widget": "table"
+                    },
+                    {
+                        "title": "Neuer Antrag",
+                        "widget": "create",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ID": {
+                                    "type": "number",
+                                    "createOnly": true,
+                                    "style": {
+                                        "width": "600px"
+                                    }
+                                },
+                                "_": {
+                                    "html": "<b>Angaben zum Arbeitgeber:</b>",
+                                    "widget": "html"
+                                },
+                                "firmaName": {
+                                    "type": "string",
+                                    "title": "Firmenbezeichnung"
+                                },
+                                "firmaOrt": {
+                                    "type": "string",
+                                    "title": "PLZ und Ort"
+                                },
+                                "firmaEmail": {
+                                    "type": "string",
+                                    "title": "E-Mail"
+                                },
+                                "erinnerung": {
+                                    "type": "boolean",
+                                    "title": "Wollen Sie per E-mail Erinnerungen erhalten (z.B. das Einreichen von Lohnabrechnungen)"
+                                },
+                                "__": {
+                                    "html": "<b>Der Zuschuss wird beantragt für die Einstellung von:</b>",
+                                    "widget": "html"
+                                },
+                                "maName": {
+                                    "type": "string",
+                                    "title": "Name, Vorname"
+                                },
+                                "maGeboren": {
+                                    "type": "string",
+                                    "title": "Geburtsdatum",
+                                    "widget": "date"
+                                },
+                                "behinderung": {
+                                    "type": "boolean",
+                                    "title": "Liegt bei dem Arbeitnehmer eine anerkannte Schwerbehinderung vor?"
+                                },
+                                "sgb": {
+                                    "type": "boolean",
+                                    "title": "Unterliegen Sie der Beschäftigungspflicht nach dem SGB IX?"
+                                },
+                                "sgbErfüllt": {
+                                    "type": "boolean",
+                                    "title": "Wenn ja, ist die Beschäftigungspflicht erfüllt?"
+                                },
+                                "___": {
+                                    "html": "<b>Anforderungen des Arbeitsplatzes:</b>",
+                                    "widget": "html"
+                                },
+                                "arbeitsplatzAnforderung": {
+                                    "type": "string",
+                                    "title": "Welche Kenntnisse, Fähigkeiten und Fertigkeiten sind für die auszuführenden Tätigkeiten erforderlich?"
+                                },
+                                "wochenstunden": {
+                                    "type": "number",
+                                    "title": "Wochenarbeitszeit in Stunden"
+                                },
+                                "____": {
+                                    "html": "<b>Bankverbindung des Arbeitgebers:</b>",
+                                    "widget": "html"
+                                },
+                                "iban": {
+                                    "type": "string",
+                                    "title": "IBAN"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "widget": "dj-table-metadata"
+                    }
+                ]
+            },
+            "instanceLayout": {
+                "widget": "page",
+                "children": [
+                    {
+                        "display": "{\"Firma\": value.firmaName, \"Prüfung\": value.wochenstunden >= 50 ? \"Die Wochenarbeitszeit darf 50 Stunden nicht überschreiben\":\"\"}",
+                        "icons": {
+                            "Firma": "store",
+                            "Prüfung": "gavel"
+                        },
+                        "widget": "display"
+                    },
+                    {
+                        "widget": "button",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Begründung": {
+                                    "required": true,
+                                    "style": {
+                                        "width": "600px"
+                                    }
+                                },
+                                "Förderfähig": {
+                                    "widget": "boolean"
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

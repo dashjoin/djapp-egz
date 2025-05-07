@@ -1,0 +1,12 @@
+{
+    "ID": "Home",
+    "layout": {
+        "widget": "page",
+        "children": [
+            {
+                "widget": "markdown",
+                "markdown-pointer": "markdown.md"
+            }
+        ]
+    }
+}
