@@ -5,6 +5,12 @@
     "password": "DJ1#\brSFfAfQaNSnf7ISc+sWzj35cMOVwx6Rc",
     "url": "jdbc:postgresql://localhost:5432/postgres",
     "ID": "dj/postgres",
+    "writeRoles": [
+        "authenticated"
+    ],
+    "readRoles": [
+        "authenticated"
+    ],
     "tables": {
         "Antrag": {
             "tableLayout": {
